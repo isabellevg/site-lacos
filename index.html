@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173f35">
+<title>Laços | Adoção que transforma vidas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--g:#173f35;
+--g2:#2c624d;
+--lime:#d8ed9c;
+--cream:#f7f6ef;
+--paper:#fffefa;
+--ink:#24372e;
+--muted:#6c7b72;
+--line:#e5e9df;
+--peach:#c77b60;
+--shadow:0 20px 55px #173f3518;
+}
+
+* {
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html {
+scroll-behavior:smooth;
+scroll-padding-top:85px;
+}
+
+body {
+font-family:"DM Sans",sans-serif;
+background:var(--cream);
+color:var(--ink);
+line-height:1.6;
+}
+
+button,input,select,textarea {
+font:inherit;
+}
+
+.container {
+width:min(1160px,91%);
+margin:auto;
+}
+
+.top {
+background:var(--g);
+color:#eaf1e7;
+text-align:center;
+padding:7px;
+font-size:.78rem;
+}
+
+header {
+position:sticky;
+top:0;
+z-index:20;
+background:#f7f6eff0;
+backdrop-filter:blur(15px);
+border-bottom:1px solid var(--line);
+}
+
+.nav {
+height:75px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.logo {
+font-weight:800;
+font-size:1.4rem;
+color:var(--g);
+text-decoration:none;
+display:flex;
+align-items:center;
+gap:9px;
+}
+
+.logo b {
+display:grid;
+place-items:center;
+background:var(--lime);
+width:39px;
+height:39px;
+border-radius:14px;
+}
+
+.links {
+display:flex;
+gap:26px;
+}
+
+.links a {
+color:#58685e;
+text-decoration:none;
+font-weight:700;
+font-size:.9rem;
+}
+
+.links a:hover {
+color:var(--g);
+}
+
+.btn {
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+border:0;
+border-radius:999px;
+padding:13px 20px;
+background:var(--g);
+color:white;
+text-decoration:none;
+font-weight:800;
+cursor:pointer;
+transition:.2s;
+}
+
+.btn:hover {
+background:var(--g2);
+transform:translateY(-2px);
+}
+
+.btn.outline {
+background:transparent;
+border:1px solid #cbd6ca;
+color:var(--g);
+}
+
+.btn.small {
+padding:10px 15px;
+font-size:.84rem;
+}
+
+.menu {
+display:none;
+border:0;
+background:#e8efe4;
+color:var(--g);
+width:43px;
+height:43px;
+border-radius:13px;
+font-size:1.25rem;
+}
+
+.hero {
+padding:68px 0 76px;
+background:
+radial-gradient(circle at 85% 10%,#dce9c9 0,transparent 27%),
+radial-gradient(circle at 0 100%,#f4d9c9 0,transparent 25%),
+var(--cream);
+}
+
+.hero-grid {
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:55px;
+align-items:center;
+}
+
+.pill {
+display:inline-flex;
+gap:8px;
+align-items:center;
+border:1px solid #dce5d7;
+background:#ffffffa8;
+padding:8px 13px;
+border-radius:99px;
+color:var(--g2);
+font-size:.78rem;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.pill i {
+width:8px;
+height:8px;
+background:#79a56c;
+border-radius:50%;
+}
+
+h1,h2 {
+font-family:"Playfair Display",serif;
+}
+
+.hero h1 {
+font-size:clamp(3rem,5.5vw,5.1rem);
+line-height:1.02;
+letter-spacing:-.04em;
+color:var(--g);
+}
+
+.hero h1 em {
+font-style:normal;
+color:var(--peach);
+}
+
+.hero p {
+font-size:1.06rem;
+color:var(--muted);
+max-width:520px;
+margin:22px 0 27px;
+}
+
+.actions {
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.proof {
+display:flex;
+align-items:center;
+gap:12px;
+margin-top:30px;
+font-size:.82rem;
+color:var(--muted);
+}
+
+.proof strong {
+color:var(--g);
+}
+
+.bubbles {
+display:flex;
+}
+
+.bubbles span {
+display:grid;
+place-items:center;
+width:31px;
+height:31px;
+border:2px solid var(--cream);
+border-radius:50%;
+background:#e4eadb;
+margin-left:-5px;
+}
+
+.visual {
+position:relative;
+height:465px;
+}
+
+.photo {
+position:absolute;
+inset:0 24px 20px 15px;
+border-radius:38px 38px 105px 38px;
+overflow:hidden;
+box-shadow:var(--shadow);
+background:#dce8d7;
+}
+
+.photo img {
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.float {
+position:absolute;
+background:white;
+border-radius:17px;
+padding:14px 17px;
+box-shadow:var(--shadow);
+}
+
+.float.one {
+left:-8px;
+bottom:0;
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.float.two {
+right:0;
+top:24px;
+max-width:175px;
+}
+
+.float strong {
+display:block;
+color:var(--g);
+font-size:.88rem;
+}
+
+.float small {
+color:var(--muted);
+font-size:.75rem;
+}
+
+.float.two b {
+font-family:"Playfair Display";
+font-size:1.12rem;
+line-height:1.2;
+color:var(--g);
+display:block;
+margin-top:5px;
+}
+
+.trust {
+background:var(--g);
+color:white;
+padding:23px 0;
+}
+
+.trust-grid {
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.trust-item {
+display:flex;
+justify-content:center;
+align-items:center;
+gap:11px;
+}
+
+.trust-item b {
+font-size:1.4rem;
+color:var(--lime);
+}
+
+.trust-item span {
+font-size:.78rem;
+color:#d6e2d9;
+line-height:1.25;
+}
+
+section {
+padding:82px 0;
+}
+
+.head {
+text-align:center;
+max-width:670px;
+margin:0 auto 35px;
+}
+
+.kicker {
+font-size:.75rem;
+font-weight:800;
+letter-spacing:.14em;
+text-transform:uppercase;
+color:var(--peach);
+}
+
+.head h2,.split h2 {
+font-size:clamp(2.1rem,3.8vw,3rem);
+color:var(--g);
+line-height:1.12;
+margin:10px 0 13px;
+}
+
+.head p {
+color:var(--muted);
+}
+
+.discover {
+display:flex;
+align-items:end;
+justify-content:space-between;
+gap:20px;
+margin-bottom:23px;
+}
+
+.discover h2 {
+font:700 2.35rem "Playfair Display";
+color:var(--g);
+}
+
+.discover p {
+color:var(--muted);
+font-size:.9rem;
+}
+
+.filters {
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr auto;
+gap:10px;
+margin-bottom:25px;
+}
+
+.field {
+width:100%;
+border:1px solid var(--line);
+background:white;
+border-radius:13px;
+padding:13px 15px;
+outline:none;
+color:var(--ink);
+min-width:0;
+}
+
+.field:focus {
+border-color:#7d9f78;
+box-shadow:0 0 0 3px #8eae822c;
+}
+
+.grid {
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:22px;
+}
+
+.card {
+background:var(--paper);
+border:1px solid #e9ece4;
+border-radius:22px;
+overflow:hidden;
+transition:.25s;
+}
+
+.card:hover {
+transform:translateY(-6px);
+box-shadow:var(--shadow);
+}
+
+.pet-img {
+height:235px;
+position:relative;
+background:#e4ebdf;
+}
+
+.pet-img img {
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.tag {
+position:absolute;
+top:13px;
+left:13px;
+background:#fffef2ed;
+color:var(--g);
+padding:6px 11px;
+border-radius:99px;
+font-size:.72rem;
+font-weight:800;
+}
+
+.heart {
+position:absolute;
+right:13px;
+top:13px;
+border:0;
+background:#fffef2ed;
+width:38px;
+height:38px;
+border-radius:50%;
+color:#b66d68;
+font-size:1.2rem;
+cursor:pointer;
+}
+
+.heart.active {
+color:#d44f60;
+}
+
+.pet-info {
+padding:18px;
+}
+
+.pet-title {
+display:flex;
+justify-content:space-between;
+gap:8px;
+align-items:center;
+}
+
+.pet-title h3 {
+font-size:1.2rem;
+color:var(--g);
+}
+
+.pet-title span {
+font-size:.78rem;
+color:var(--muted);
+}
+
+.pet-info p {
+font-size:.86rem;
+color:var(--muted);
+margin:8px 0 14px;
+min-height:42px;
+}
+
+.facts {
+display:flex;
+gap:7px;
+flex-wrap:wrap;
+margin-bottom:16px;
+}
+
+.fact {
+background:#f0f3eb;
+color:#5f7163;
+border-radius:99px;
+padding:5px 9px;
+font-size:.71rem;
+font-weight:700;
+}
+
+.pet-buttons {
+display:flex;
+gap:8px;
+}
+
+.pet-buttons .btn {
+flex:1;
+}
+
+.empty {
+grid-column:1/-1;
+text-align:center;
+background:white;
+padding:40px;
+border-radius:18px;
+color:var(--muted);
+}
+
+.match {
+background:#e9f0e4;
+}
+
+.match-grid {
+display:grid;
+grid-template-columns:.9fr 1.1fr;
+gap:50px;
+align-items:center;
+}
+
+.split p {
+color:var(--muted);
+max-width:470px;
+}
+
+.ticks {
+display:grid;
+gap:10px;
+margin-top:23px;
+color:var(--g);
+font-size:.9rem;
+font-weight:700;
+}
+
+.quiz {
+background:var(--paper);
+padding:27px;
+border:1px solid #e2e9de;
+border-radius:25px;
+box-shadow:var(--shadow);
+}
+
+.quiz-top {
+display:flex;
+justify-content:space-between;
+color:var(--g);
+font-weight:800;
+font-size:.9rem;
+}
+
+.progress {
+height:6px;
+background:#e9eee5;
+border-radius:99px;
+margin:17px 0 22px;
+overflow:hidden;
+}
+
+.progress span {
+display:block;
+height:100%;
+width:33%;
+background:#89a977;
+transition:.2s;
+}
+
+.question {
+font-weight:800;
+color:var(--g);
+font-size:1.1rem;
+margin-bottom:14px;
+}
+
+.choices {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.choice {
+border:1px solid var(--line);
+background:white;
+border-radius:13px;
+padding:13px;
+text-align:left;
+color:#526258;
+font-weight:700;
+cursor:pointer;
+}
+
+.choice.selected,.choice:hover {
+border-color:#8eae82;
+background:#f0f5eb;
+color:var(--g);
+}
+
+.quiz-bottom {
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+margin-top:20px;
+}
+
+.hint {
+font-size:.77rem;
+color:var(--muted);
+}
+
+.result {
+display:none;
+background:#f0f5eb;
+color:var(--g);
+border-radius:13px;
+padding:15px;
+margin-top:16px;
+font-weight:700;
+font-size:.88rem;
+}
+
+.steps {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:19px;
+}
+
+.step {
+background:white;
+border:1px solid var(--line);
+border-radius:20px;
+padding:25px;
+}
+
+.num {
+font:2.3rem "Playfair Display";
+color:var(--peach);
+margin-bottom:13px;
+}
+
+.step h3 {
+color:var(--g);
+margin-bottom:8px;
+}
+
+.step p {
+color:var(--muted);
+font-size:.88rem;
+}
+
+.story {
+background:#f2e8dd;
+}
+
+.story-grid {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.story-img {
+height:370px;
+border-radius:30px 30px 90px 30px;
+overflow:hidden;
+}
+
+.story-img img {
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.story p {
+color:var(--muted);
+}
+
+.quote {
+font:1.2rem "Playfair Display";
+color:var(--g);
+border-left:3px solid var(--peach);
+padding-left:16px;
+margin:18px 0;
+}
+
+.forms {
+background:#eef2e9;
+}
+
+.form-grid {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px;
+}
+
+.form-card {
+background:white;
+border:1px solid var(--line);
+border-radius:22px;
+padding:26px;
+}
+
+.form-card h3 {
+color:var(--g);
+font-size:1.2rem;
+}
+
+.form-card>p {
+color:var(--muted);
+font-size:.86rem;
+margin:5px 0 18px;
+}
+
+.stack {
+display:grid;
+gap:10px;
+}
+
+.stack label {
+font-size:.8rem;
+font-weight:800;
+color:#596a5e;
+margin-bottom:-5px;
+}
+
+.stack .btn {
+width:100%;
+margin-top:5px;
+border-radius:12px;
+}
+
+.msg {
+min-height:20px;
+text-align:center;
+color:var(--g);
+font-size:.82rem;
+font-weight:700;
+}
+
+footer {
+background:#12372e;
+color:white;
+padding:40px 0 22px;
+}
+
+.footer-main {
+display:flex;
+justify-content:space-between;
+gap:25px;
+padding-bottom:25px;
+border-bottom:1px solid #ffffff26;
+}
+
+.footer-main p {
+max-width:370px;
+color:#d3e0d5;
+font-size:.88rem;
+}
+
+.footer-bottom {
+display:flex;
+justify-content:space-between;
+gap:12px;
+flex-wrap:wrap;
+padding-top:18px;
+color:#b8cbbd;
+font-size:.76rem;
+}
+
+.modal-bg {
+position:fixed;
+inset:0;
+background:#10271f9c;
+z-index:50;
+display:none;
+place-items:center;
+padding:18px;
+}
+
+.modal-bg.open {
+display:grid;
+}
+
+.modal {
+width:min(500px,100%);
+background:white;
+border-radius:23px;
+padding:27px;
+position:relative;
+}
+
+.close {
+position:absolute;
+right:14px;
+top:13px;
+border:0;
+background:#edf1e9;
+border-radius:50%;
+width:35px;
+height:35px;
+font-size:1.2rem;
+cursor:pointer;
+}
+
+.modal h3 {
+font:700 1.8rem "Playfair Display";
+color:var(--g);
+margin:8px 35px 8px 0;
+}
+
+.modal p {
+color:var(--muted);
+margin-bottom:17px;
+}
+
+.toast {
+position:fixed;
+right:20px;
+bottom:20px;
+background:var(--g);
+color:white;
+padding:14px 18px;
+border-radius:13px;
+opacity:0;
+transform:translateY(10px);
+transition:.2s;
+pointer-events:none;
+z-index:70;
+}
+
+.toast.show {
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:950px) {
+.hero-grid {
+gap:28px;
+}
+.visual {
+height:390px;
+}
+.grid {
+grid-template-columns:repeat(2,1fr);
+}
+.filters {
+grid-template-columns:1fr 1fr;
+}
+.filters .btn {
+grid-column:1/-1;
+}
+}
+
+@media(max-width:720px) {
+.nav {
+height:68px;
+}
+.menu {
+display:block;
+}
+.links {
+display:none;
+position:absolute;
+top:68px;
+left:0;
+right:0;
+background:var(--cream);
+padding:18px 5%;
+border-bottom:1px solid var(--line);
+flex-direction:column;
+gap:14px;
+}
+.links.open {
+display:flex;
+}
+.nav>.btn {
+display:none;
+}
+.hero {
+padding:48px 0 58px;
+}
+.hero-grid,.match-grid,.story-grid,.form-grid {
+grid-template-columns:1fr;
+}
+.hero h1 {
+font-size:3.35rem;
+}
+.visual {
+height:350px;
+margin:5px 8px 0 15px;
+}
+.trust-grid {
+grid-template-columns:1fr 1fr;
+row-gap:18px;
+}
+.trust-item {
+justify-content:flex-start;
+}
+section {
+padding:64px 0;
+}
+.steps {
+grid-template-columns:1fr;
+}
+.story-img {
+height:290px;
+}
+.footer-main {
+flex-direction:column;
+}
+}
+
+@media(max-width:480px) {
+.grid {
+grid-template-columns:1fr;
+}
+.pet-img {
+height:250px;
+}
+.filters {
+grid-template-columns:1fr;
+}
+.filters .btn {
+grid-column:auto;
+}
+.hero h1 {
+font-size:2.85rem;
+}
+.visual {
+height:310px;
+}
+.choices {
+grid-template-columns:1fr;
+}
+.quiz {
+padding:20px;
+}
+}
+
+@media(prefers-reduced-motion:reduce) {
+*,*::before,*::after {
+scroll-behavior:auto!important;
+transition:none!important;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+🐾 A adoção muda uma vida — e pode mudar a sua também.
+</div>
+
+<header>
+<div class="container nav">
+
+<a class="logo" href="#inicio"><b>♡</b> laços.</a>
+
+<button class="menu" id="menu" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+<nav class="links" id="links">
+<a href="#pets">Encontrar um pet</a>
+<a href="#match">Teste de afinidade</a>
+<a href="#como">Como adotar</a>
+<a href="#sobre">Nossa causa</a>
+</nav>
+
+<a class="btn small" href="#cadastro">Quero adotar ↗</a>
+
+</div>
+</header>
+
+<main>
+
+<!-- APRESENTAÇÃO -->
+
+<section class="hero" id="inicio">
+<div class="container hero-grid">
+
+<div>
+
+<div class="pill">
+<i></i> Adoção responsável, conexão verdadeira
+</div>
+
+<h1>Seu próximo grande amor tem <em>quatro patas.</em></h1>
+
+<p>
+Mais do que encontrar um pet, queremos ajudar você a encontrar uma amizade que combine com seu jeito de viver. Conheça histórias, descubra afinidades e transforme destinos.
+</p>
+
+<div class="actions">
+<a class="btn" href="#pets">Encontrar meu novo amigo ♡</a>
+<a class="btn outline" href="#match">Fazer teste de afinidade</a>
+</div>
+
+<div class="proof">
+<div class="bubbles">
+<span>🐶</span>
+<span>🐱</span>
+<span>🐾</span>
+</div>
+
+<span>
+<strong>Uma nova história começa</strong><br>
+com um gesto de carinho.
+</span>
+</div>
+
+</div>
+
+<div class="visual">
+
+<div class="photo">
+<img src="auauau.jpg" alt="Cachorrinho apresentando o projeto">
+</div>
+
+<div class="float one">
+<span style="font-size:1.5rem">🏡</span>
+<div>
+<strong>Um lar cheio de amor</strong>
+<small>É tudo o que eles procuram</small>
+</div>
+</div>
+
+<div class="float two">
+<small>O MELHOR ENCONTRO</small>
+<b>Às vezes, quem escolhe você é o pet. ✨</b>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- DIFERENCIAIS -->
+
+<div class="trust">
+<div class="container trust-grid">
+
+<div class="trust-item">
+<b>♡</b>
+<span>Adoção com<br>responsabilidade</span>
+</div>
+
+<div class="trust-item">
+<b>✦</b>
+<span>Conexões que<br>fazem sentido</span>
+</div>
+
+<div class="trust-item">
+<b>⌂</b>
+<span>Um novo lar<br>com segurança</span>
+</div>
+
+<div class="trust-item">
+<b>∞</b>
+<span>Amor para<br>a vida toda</span>
+</div>
+
+</div>
+</div>
+
+<!-- GALERIA DE ANIMAIS -->
+
+<section id="pets">
+<div class="container">
+
+<div class="discover">
+<div>
+<span class="kicker">Conheça os focinhos</span>
+<h2>Amigos à sua espera</h2>
+<p>Explore os perfis e encontre uma conexão especial.</p>
+</div>
+
+<a href="#cadastro" style="color:var(--g);font-weight:800;text-decoration:none">
+Tem um pet para divulgar? →
+</a>
+</div>
+
+<div class="filters">
+
+<input
+class="field"
+id="search"
+type="search"
+placeholder="⌕ Buscar pelo nome..."
+aria-label="Buscar pelo nome">
+
+<select class="field" id="type">
+<option value="">Todas as espécies</option>
+<option>Cachorro</option>
+<option>Gato</option>
+<option>Passarinho</option>
+<option>Coelho</option>
+<option>Hamster</option>
+</select>
+
+<select class="field" id="size">
+<option value="">Todos os portes</option>
+<option>Pequeno</option>
+<option>Médio</option>
+<option>Grande</option>
+</select>
+
+<button class="btn small" id="clear">Limpar filtros</button>
+
+</div>
+
+<div class="grid" id="petGrid" aria-live="polite"></div>
+
+</div>
+</section>
+
+<!-- TESTE DE AFINIDADE -->
+
+<section class="match" id="match">
+<div class="container match-grid">
+
+<div class="split">
+
+<span class="kicker">Encontro de personalidades</span>
+
+<h2>Qual pet combina com o seu estilo de vida?</h2>
+
+<p>
+Responda três perguntinhas rápidas. Nosso teste sugere por onde começar sua busca — porque cada amizade tem seu próprio ritmo.
+</p>
+
+<div class="ticks">
+<span>✓ Considere sua rotina e seu espaço</span>
+<span>✓ Pense no tempo que pode dedicar</span>
+<span>✓ Lembre-se: adoção é compromisso</span>
+</div>
+
+</div>
+
+<div class="quiz">
+
+<div class="quiz-top">
+<span>✨ Teste de afinidade</span>
+<span id="step">Pergunta 1 de 3</span>
+</div>
+
+<div class="progress">
+<span id="bar"></span>
+</div>
+
+<div class="question" id="question"></div>
+
+<div class="choices" id="choices"></div>
+
+<div class="quiz-bottom">
+<span class="hint" id="hint">Escolha uma opção para continuar.</span>
+<button class="btn small" id="next" disabled>Continuar →</button>
+</div>
+
+<div class="result" id="result"></div>
+
+</div>
+</div>
+</section>
+
+<!-- COMO ADOTAR -->
+
+<section id="como">
+<div class="container">
+
+<div class="head">
+<span class="kicker">Do primeiro oi ao para sempre</span>
+<h2>Adotar é mais simples do que parece.</h2>
+<p>
+O processo deve ser feito com cuidado, conversa e responsabilidade. Cada etapa importa.
+</p>
+</div>
+
+<div class="steps">
+
+<article class="step">
+<div class="num">01</div>
+<h3>Descubra sua conexão</h3>
+<p>
+Veja os perfis, leia as informações e pense em qual animal combina com sua rotina.
+</p>
+</article>
+
+<article class="step">
+<div class="num">02</div>
+<h3>Converse e conheça</h3>
+<p>
+Entre em contato com o responsável, tire dúvidas e marque um encontro para conhecer o pet.
+</p>
+</article>
+
+<article class="step">
+<div class="num">03</div>
+<h3>Prepare o novo lar</h3>
+<p>
+Organize o ambiente, planeje os cuidados e assuma o compromisso de oferecer carinho e proteção.
+</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- NOSSA CAUSA -->
+
+<section class="story" id="sobre">
+<div class="container story-grid">
+
+<div class="story-img">
+<img src="duo.jpg" alt="Imagem da nossa causa">
+</div>
+
+<div>
+
+<span class="kicker">Por trás de cada animal, uma história</span>
+
+<h2 style="font-size:clamp(2.2rem,4vw,3.1rem);line-height:1.1;color:var(--g);margin:10px 0 17px">
+Não é só sobre encontrar um pet. É sobre criar laços.
+</h2>
+
+<p>
+O Laços nasceu com uma ideia simples: tornar a adoção mais próxima, acolhedora e consciente. Queremos conectar pessoas e animais, valorizando o bem-estar e o respeito em cada encontro.
+</p>
+
+<div class="quote">
+“Uma adoção responsável não termina quando o pet chega em casa. É ali que a história começa.”
+</div>
+
+<p>
+Conheça, pergunte, prepare-se e adote com o coração — e também com responsabilidade.
+</p>
+
+</div>
+</div>
+</section>
+
+<!-- FORMULÁRIOS -->
+
+<section class="forms" id="cadastro">
+<div class="container">
+
+<div class="head">
+<span class="kicker">Faça parte dessa mudança</span>
+<h2>Um novo começo pode começar aqui.</h2>
+<p>
+Cadastre um animal para divulgação ou manifeste seu interesse em conhecer um dos pets.
+</p>
+</div>
+
+<div class="form-grid">
+
+<form class="form-card stack" id="petForm">
+
+<h3>🐾 Divulgar um pet</h3>
+<p>Ajude um animal a ser encontrado por sua nova família.</p>
+
+<label for="petName">Nome do pet</label>
+<input class="field" id="petName" required maxlength="40" placeholder="Ex.: Amora">
+
+<label for="petType">Espécie</label>
+<select class="field" id="petType" required>
+<option value="">Selecione</option>
+<option>Cachorro</option>
+<option>Gato</option>
+<option>Passarinho</option>
+<option>Coelho</option>
+<option>Hamster</option>
+</select>
+
+<label for="petAge">Idade aproximada</label>
+<input class="field" id="petAge" required maxlength="30" placeholder="Ex.: 1 ano">
+
+<label for="petSize">Porte</label>
+<select class="field" id="petSize" required>
+<option value="">Selecione</option>
+<option>Pequeno</option>
+<option>Médio</option>
+<option>Grande</option>
+</select>
+
+<label for="petPhoto">Link de uma foto (opcional)</label>
+<input class="field" id="petPhoto" type="url" placeholder="https://...">
+
+<button class="btn" type="submit">Adicionar perfil ♡</button>
+
+<div class="msg" id="petMsg" role="status"></div>
+
+</form>
+
+<form class="form-card stack" id="visitForm">
+
+<h3>💌 Quero conhecer um pet</h3>
+<p>Deixe seu interesse registrado para iniciar uma conversa com o responsável.</p>
+
+<label for="person">Seu nome</label>
+<input class="field" id="person" required maxlength="80" placeholder="Nome completo">
+
+<label for="email">E-mail para contato</label>
+<input class="field" id="email" type="email" required placeholder="voce@email.com">
+
+<label for="chosen">Qual pet deseja conhecer?</label>
+<select class="field" id="chosen" required>
+<option value="">Selecione um pet</option>
+</select>
+
+<label for="note">Conte um pouquinho sobre seu interesse (opcional)</label>
+<textarea class="field" id="note" rows="3" maxlength="400" placeholder="Como é sua casa? Já teve um pet?"></textarea>
+
+<button class="btn" type="submit">Enviar manifestação de interesse ♡</button>
+
+<div class="msg" id="visitMsg" role="status"></div>
+
+</form>
+
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- RODAPÉ -->
+
+<footer>
+<div class="container">
+
+<div class="footer-main">
+
+<div>
+<a class="logo" href="#inicio" style="color:white">
+<b>♡</b> laços.
+</a>
+
+<p style="margin-top:9px">
+Conectando pessoas e animais por meio da adoção responsável.
+</p>
+</div>
+
+<p>
+Adote com consciência. Cuide com amor. Construa uma amizade para a vida toda. 🐾
+</p>
+
+</div>
+
+<div class="footer-bottom">
+<span>© 2026 Laços — Projeto demonstrativo de adoção.</span>
+<span>Feito com carinho por quem acredita nos recomeços.</span>
+</div>
+
+</div>
+</footer>
+
+<!-- JANELA DE DETALHES -->
+
+<div class="modal-bg" id="modal">
+
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+<button class="close" id="close" aria-label="Fechar">×</button>
+
+<span class="kicker">Um possível novo começo</span>
+
+<h3 id="modalTitle"></h3>
+
+<p id="modalText"></p>
+
+<button class="btn" id="interest">Tenho interesse ♡</button>
+
+</div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+
+// IMAGENS DE RESERVA
+
+const fallback = {
+Cachorro:"https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=900&q=85",
+Gato:"https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=85",
+Passarinho:"https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=900&q=85",
+Coelho:"https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?auto=format&fit=crop&w=900&q=85",
+Hamster:"https://images.unsplash.com/photo-1425082661705-1834bfd09dca?auto=format&fit=crop&w=900&q=85"
+};
+
+// ANIMAIS CADASTRADOS
+
+let pets = [
+
+{
+id:1,
+n:"Thor",
+t:"Cachorro",
+a:"2 anos",
+s:"Grande",
+v:"Companheiro e protetor",
+d:"Thor é um cachorro cheio de carinho e procura uma família para chamar de sua.",
+p:"thor.jpg"
+},
+
+{
+id:2,
+n:"Luna",
+t:"Gato",
+a:"1 ano",
+s:"Pequeno",
+v:"Doce e curiosa",
+d:"Luna é uma gatinha curiosa que merece um lar cheio de cuidado.",
+p:"luna.jpg"
+},
+
+{
+id:3,
+n:"Bob",
+t:"Cachorro",
+a:"3 anos",
+s:"Médio",
+v:"Alegre e companheiro",
+d:"Bob está pronto para conhecer pessoas que queiram dividir muitos momentos com ele.",
+p:"bob.jpg"
+},
+
+{
+id:4,
+n:"Mia",
+t:"Gato",
+a:"2 anos",
+s:"Pequeno",
+v:"Carinhosa e tranquila",
+d:"Mia é uma gatinha que espera encontrar uma família amorosa.",
+p:"mia.jpg"
+},
+
+{
+id:5,
+n:"Pretinha",
+t:"Cachorro",
+a:"Não informada",
+s:"Médio",
+v:"Doce e especial",
+d:"Pretinha está à procura de um lar seguro e cheio de carinho.",
+p:"cachorrinha.jpg"
+},
+
+{
+id:6,
+n:"Mel",
+t:"Cachorro",
+a:"Não informada",
+s:"Grande",
+v:"Carinhosa e brincalhona",
+d:"Mel é uma companheira especial que espera encontrar uma família cheia de amor.",
+p:"golden.jpg"
+},
+
+{
+id:7,
+n:"Casal de Calopsitas",
+t:"Passarinho",
+a:"Não informada",
+s:"Pequeno",
+v:"Companheiros e alegres",
+d:"Esse lindo casal de calopsitas procura um ambiente seguro, tranquilo e cheio de cuidados.",
+p:"casal.jpg"
+},
+
+{
+id:8,
+n:"Floquinho",
+t:"Coelho",
+a:"Não informada",
+s:"Pequeno",
+v:"Fofo e tranquilo",
+d:"Floquinho é um coelhinho especial que procura um lar com muito carinho.",
+p:"coelho.jpg"
+},
+
+{
+id:9,
+n:"Algodão",
+t:"Coelho",
+a:"Não informada",
+s:"Pequeno",
+v:"Doce e delicado",
+d:"Algodão espera encontrar uma família que ofereça proteção e cuidado.",
+p:"coelho2.jpg"
+},
+
+{
+id:10,
+n:"Pipoca",
+t:"Hamster",
+a:"Não informada",
+s:"Pequeno",
+v:"Curiosa e divertida",
+d:"Pipoca é uma hamster cheia de personalidade que merece um lar acolhedor.",
+p:"hamster.jpg"
+},
+
+{
+id:11,
+n:"Nino",
+t:"Hamster",
+a:"Não informada",
+s:"Pequeno",
+v:"Pequeno e encantador",
+d:"Nino procura um cantinho seguro e uma família responsável.",
+p:"hamster2.jpg"
+}
+
+];
+
+const grid = document.getElementById("petGrid");
+const chosen = document.getElementById("chosen");
+
+let favorites = new Set();
+let active = null;
+
+// NOTIFICAÇÕES
+
+function notify(message) {
+
+const toast = document.getElementById("toast");
+
+toast.textContent = message;
+toast.classList.add("show");
+
+clearTimeout(notify.timer);
+
+notify.timer = setTimeout(
+()=>toast.classList.remove("show"),
+3000
+);
+
+}
+
+// ATUALIZAR LISTA DO FORMULÁRIO
+
+function updateSelect() {
+
+const old = chosen.value;
+
+chosen.replaceChildren(
+new Option("Selecione um pet","")
+);
+
+pets.forEach(p => {
+chosen.add(new Option(p.n,p.id));
+});
+
+if(pets.some(p=>String(p.id)===old)) {
+chosen.value=old;
+}
+
+}
+
+// ABRIR PERFIL DO ANIMAL
+
+function showPet(id) {
+
+active = pets.find(p=>p.id===id);
+
+document.getElementById("modalTitle").textContent =
+"Oi, eu sou "+active.n+"!";
+
+document.getElementById("modalText").textContent =
+active.d+
+" Tenho "+active.a+
+", sou de porte "+active.s.toLowerCase()+
+" e minha personalidade é "+active.v.toLowerCase()+
+". Se quiser me conhecer, manifeste seu interesse no formulário.";
+
+document.getElementById("modal").classList.add("open");
+
+}
+
+// MOSTRAR ANIMAIS
+
+function render() {
+
+const q = document.getElementById("search")
+.value.toLocaleLowerCase("pt-BR").trim();
+
+const t = document.getElementById("type").value;
+const s = document.getElementById("size").value;
+
+const list = pets.filter(p =>
+p.n.toLocaleLowerCase("pt-BR").includes(q) &&
+(!t || p.t===t) &&
+(!s || p.s===s)
+);
+
+grid.replaceChildren();
+
+if(!list.length) {
+
+const e = document.createElement("div");
+
+e.className="empty";
+e.textContent="Não encontramos pets com esses filtros. Tente outra busca. 🐾";
+
+grid.append(e);
+
+return;
+}
+
+list.forEach(p=>{
+
+const c=document.createElement("article");
+c.className="card";
+
+const visual=document.createElement("div");
+visual.className="pet-img";
+
+const im=document.createElement("img");
+
+im.src=p.p || fallback[p.t];
+im.alt="Foto de "+p.n;
+im.loading="lazy";
+
+im.onerror=()=>{
+im.onerror=null;
+im.src=fallback[p.t];
+};
+
+const tag=document.createElement("span");
+tag.className="tag";
+tag.textContent=p.t;
+
+const heart=document.createElement("button");
+
+heart.className="heart"+(favorites.has(p.id)?" active":"");
+heart.textContent=favorites.has(p.id)?"♥":"♡";
+
+heart.setAttribute("aria-label","Favoritar "+p.n);
+
+heart.onclick=()=>{
+
+favorites.has(p.id)
+?favorites.delete(p.id)
+:favorites.add(p.id);
+
+render();
+
+};
+
+visual.append(im,tag,heart);
+
+const info=document.createElement("div");
+info.className="pet-info";
+
+const title=document.createElement("div");
+title.className="pet-title";
+
+const h=document.createElement("h3");
+h.textContent=p.n;
+
+const age=document.createElement("span");
+age.textContent=p.a;
+
+title.append(h,age);
+
+const d=document.createElement("p");
+d.textContent=p.d;
+
+const facts=document.createElement("div");
+facts.className="facts";
+
+[p.s+" porte",p.v].forEach(x=>{
+
+const f=document.createElement("span");
+
+f.className="fact";
+f.textContent=x;
+
+facts.append(f);
+
+});
+
+const buttons=document.createElement("div");
+buttons.className="pet-buttons";
+
+const more=document.createElement("button");
+
+more.className="btn small";
+more.textContent="Conhecer →";
+more.onclick=()=>showPet(p.id);
+
+const choose=document.createElement("button");
+
+choose.className="btn small outline";
+choose.textContent="♡";
+
+choose.setAttribute("aria-label","Tenho interesse em "+p.n);
+
+choose.onclick=()=>{
+
+updateSelect();
+
+chosen.value=p.id;
+
+document.getElementById("cadastro")
+.scrollIntoView({behavior:"smooth"});
+
+notify(p.n+" selecionado no formulário!");
+
+};
+
+buttons.append(more,choose);
+
+info.append(title,d,facts,buttons);
+
+c.append(visual,info);
+
+grid.append(c);
+
+});
+
+}
+
+// FILTROS
+
+["search","type","size"].forEach(id=>{
+
+document.getElementById(id).addEventListener(
+id==="search"?"input":"change",
+render
+);
+
+});
+
+document.getElementById("clear").onclick=()=>{
+
+["search","type","size"].forEach(id=>{
+document.getElementById(id).value="";
+});
+
+render();
+
+};
+
+// FECHAR JANELA
+
+document.getElementById("close").onclick=()=>{
+
+document.getElementById("modal").classList.remove("open");
+
+};
+
+document.getElementById("modal").onclick=e=>{
+
+if(e.target.id==="modal") {
+e.currentTarget.classList.remove("open");
+}
+
+};
+
+// INTERESSE PELO ANIMAL
+
+document.getElementById("interest").onclick=()=>{
+
+updateSelect();
+
+chosen.value=active.id;
+
+document.getElementById("modal").classList.remove("open");
+
+document.getElementById("cadastro")
+.scrollIntoView({behavior:"smooth"});
+
+};
+
+// CADASTRAR NOVO ANIMAL
+
+document.getElementById("petForm").onsubmit=e=>{
+
+e.preventDefault();
+
+const n=document.getElementById("petName").value.trim();
+const t=document.getElementById("petType").value;
+const a=document.getElementById("petAge").value.trim();
+const s=document.getElementById("petSize").value;
+const p=document.getElementById("petPhoto").value.trim();
+
+if(p&&!/^https?:\/\//i.test(p)) {
+
+document.getElementById("petMsg").textContent=
+"Informe um link de imagem válido.";
+
+return;
+
+}
+
+pets.push({
+
+id:Math.max(0,...pets.map(x=>x.id))+1,
+n,t,a,s,
+v:"Esperando para ser conhecido",
+d:"Este pet procura uma família responsável e cheia de carinho.",
+p:p||fallback[t]
+
+});
+
+e.target.reset();
+
+render();
+updateSelect();
+
+document.getElementById("petMsg").textContent=
+"Perfil adicionado à demonstração!";
+
+notify(n+" agora aparece na lista.");
+
+};
+
+// FORMULÁRIO DE INTERESSE
+
+document.getElementById("visitForm").onsubmit=e=>{
+
+e.preventDefault();
+
+const pet=pets.find(p=>p.id===Number(chosen.value));
+
+const n=document.getElementById("person").value.trim();
+
+if(!pet) {
+
+document.getElementById("visitMsg").textContent=
+"Selecione o pet que deseja conhecer.";
+
+return;
+
+}
+
+document.getElementById("visitMsg").textContent=
+"Obrigado, "+n+"! Seu interesse em "+pet.n+
+" foi registrado nesta demonstração.";
+
+notify("Interesse registrado. Combine os próximos passos com o responsável.");
+
+e.target.reset();
+
+};
+
+// TESTE DE AFINIDADE
+
+const questions=[
+
+{
+q:"Como é sua rotina?",
+o:[
+["ativa","Bem ativa, adoro passear"],
+["calma","Mais tranquila, gosto de ficar em casa"],
+["mista","Um pouco dos dois"],
+["ocupada","Tenho pouco tempo livre"]
+]
+},
+
+{
+q:"Como é o espaço onde você mora?",
+o:[
+["casa","Casa com quintal ou área externa"],
+["apto","Apartamento"],
+["pequeno","Espaço pequeno e aconchegante"],
+["aberto","Tenho acesso a espaços abertos"]
+]
+},
+
+{
+q:"Que tipo de companhia você imagina?",
+o:[
+["brincar","Parceiro para brincar e passear"],
+["calma","Companhia tranquila e carinhosa"],
+["independente","Um amigo mais independente"],
+["aberto","Estou aberto(a) a conhecer"]
+]
+}
+
+];
+
+let qi=0;
+let answers=[];
+
+function drawQuiz() {
+
+const q=questions[qi];
+
+document.getElementById("question").textContent=q.q;
+
+document.getElementById("step").textContent=
+"Pergunta "+(qi+1)+" de 3";
+
+document.getElementById("bar").style.width=
+((qi+1)/3*100)+"%";
+
+document.getElementById("hint").textContent=
+"Escolha uma opção para continuar.";
+
+document.getElementById("next").disabled=true;
+
+document.getElementById("next").textContent=
+qi===2?"Ver sugestão":"Continuar →";
+
+const box=document.getElementById("choices");
+
+box.replaceChildren();
+
+q.o.forEach(([v,label])=>{
+
+const b=document.createElement("button");
+
+b.className="choice";
+b.textContent=label;
+
+b.onclick=()=>{
+
+answers[qi]=v;
+
+box.querySelectorAll("button").forEach(x=>{
+x.classList.remove("selected");
+});
+
+b.classList.add("selected");
+
+document.getElementById("next").disabled=false;
+
+};
+
+box.append(b);
+
+});
+
+}
+
+document.getElementById("next").onclick=()=>{
+
+if(qi<2) {
+
+qi++;
+drawQuiz();
+
+return;
+
+}
+
+const activeProfile=
+answers[0]==="ativa" ||
+answers[1]==="casa" ||
+answers[2]==="brincar";
+
+let pool;
+
+if(answers[2]==="independente") {
+pool=pets.filter(p=>p.t==="Gato");
+} else if(activeProfile) {
+pool=pets.filter(p=>p.t==="Cachorro");
+} else {
+pool=pets.filter(p=>p.t==="Gato");
+}
+
+const suggest=pool[0]||pets[0];
+
+const r=document.getElementById("result");
+
+r.style.display="block";
+
+r.textContent=
+"Seu perfil pode combinar com um pet "+
+(activeProfile
+?"mais ativo e que goste de interação"
+:"de companhia tranquila")+
+". Que tal conhecer "+suggest.n+
+"? Veja o perfil e converse com o responsável para entender as necessidades do animal.";
+
+document.getElementById("hint").textContent=
+"Sugestão concluída!";
+
+document.getElementById("next").textContent=
+"Refazer teste";
+
+document.getElementById("next").onclick=()=>{
+
+qi=0;
+answers=[];
+
+r.style.display="none";
+
+drawQuiz();
+
+};
+
+};
+
+// MENU PARA CELULAR
+
+const menu=document.getElementById("menu");
+const links=document.getElementById("links");
+
+menu.onclick=()=>{
+
+const o=links.classList.toggle("open");
+
+menu.setAttribute("aria-expanded",String(o));
+
+menu.textContent=o?"×":"☰";
+
+};
+
+links.querySelectorAll("a").forEach(a=>{
+
+a.onclick=()=>{
+
+links.classList.remove("open");
+
+menu.setAttribute("aria-expanded","false");
+
+menu.textContent="☰";
+
+};
+
+});
+
+// INICIALIZAÇÃO
+
+updateSelect();
+render();
+drawQuiz();
+
+</script>
+
+</body>
+</html>
